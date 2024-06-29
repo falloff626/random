@@ -1,0 +1,1 @@
+const pipe = (...fns) => (x) => fns.reduce((v, f) => f(v), x); const compose = (...fns) => (x) => fns.reduceRight((v, f) => f(v), x); const add = (a) => (b) => a + b; const multiply = (a) => (b) => a * b; const addThenMultiply = pipe(add(2), multiply(3)); console.log(addThenMultiply(5));
